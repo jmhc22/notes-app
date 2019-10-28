@@ -8,7 +8,7 @@
   };
 
   NoteList.prototype.allNotes = function() {
-    return this.notes.map(n => n.text).join("\n");
+    return this.notes.map(n => n.text);
   };
 
   exports.NoteList = NoteList;

@@ -13,7 +13,7 @@
     var noteList = new NoteList();
     noteList.newNote("this is note 1");
     noteList.newNote("this is note 2");
-    assert.isTrue(noteList.allNotes() === "this is note 1\nthis is note 2", "returnsAllNotes");
+    assert.isTrue(noteList.allNotes().length === 2, "returnsAllNotes");
   };
 
   returnsAllNotes();
