@@ -1,9 +1,10 @@
 (function(exports) {
   function NoteListView() {
+    this.noteList = new NoteList();
   };
 
-  NoteListView.prototype.convertHTML = function(notes) {
-    return "<ul><li><div>" + notes.join("</div></li><li><div>")
+  NoteListView.prototype.convertHTML = function() {
+    return "<ul><li><div>" + this.noteList.allNotes().join("</div></li><li><div>")
       + "</div></li></ul>";
   };
 
