@@ -4,7 +4,7 @@
   };
 
   NoteListView.prototype.convertHTML = function() {
-    return "<ul><li><div>" + this.noteList.allNotes().join("</div></li><li><div>")
+    return "<ul><li><div>" + this.noteList.allNotes20Chars().join("</div></li><li><div>")
       + "</div></li></ul>";
   };
 

@@ -7,8 +7,8 @@
     this.notes.push(new Note(text));
   };
 
-  NoteList.prototype.allNotes = function() {
-    return this.notes.map(n => n.text);
+  NoteList.prototype.allNotes20Chars = function() {
+    return this.notes.map(n => n.text.substring(0, 20));
   };
 
   exports.NoteList = NoteList;
