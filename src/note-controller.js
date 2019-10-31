@@ -1,5 +1,5 @@
 (function(exports) {
-  function NoteController(noteListView = new NoteListView(noteListModel)) {
+  function NoteController(noteListView = new NoteListView(new NoteList)) {
     noteListView.newNote("Favourite drink: seltzer");
     this.noteListView = noteListView;
   }
@@ -13,5 +13,7 @@
     this.noteListView.newNote(text);
   };
 
+  noteController = new NoteController();
+  noteController.refreshNotes();
   exports.NoteController = NoteController;
 })(this)

@@ -15,8 +15,8 @@
     noteList.newNote("this is note 2 and it is great");
     noteArray = noteList.allNotes20Chars()
     assert.isTrue(noteArray.length === 2, "returnsFirst20CharsOfAllNotes1");
-    assert.isTrue(noteArray[0].length === 20, "returnsFirst20CharsOfAllNotes2");
-    assert.isTrue(noteArray[1].length === 20, "returnsFirst20CharsOfAllNotes3");
+    assert.isTrue(noteArray[0].length === 43, "returnsFirst20CharsOfAllNotes2");
+    assert.isTrue(noteArray[1].length === 43, "returnsFirst20CharsOfAllNotes3");
 
   };
 
