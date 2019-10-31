@@ -24,7 +24,9 @@
   };
 
   function showNoteForCurrentPage() {
-    showNote(getNoteFromUrl(window.location));
+    if (location.hash.includes("#notes/")) {
+      showNote(getNoteFromUrl(window.location));
+    }
   };
 
   function getNoteFromUrl(location) {
@@ -41,6 +43,15 @@
     var noteView = new SingleNoteView(note);
     noteView.singleNoteHTML();
   }
+
+  function makeHeaderClickReturnHome() {
+    document
+      .getElementById("header")
+      .addEventListener("click", function(clickEvent) {
+        clickEvent.preventDefault();
+        noteController.refreshNotes();
+      });
+  };
 
   exports.NoteController = NoteController;
 })(this)
