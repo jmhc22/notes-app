@@ -49,11 +49,17 @@
 
   function interceptNewNoteSubmit() {
     document
-      .getElementById("text")
+      .getElementById("textsubmit")
       .addEventListener("click", function(clickEvent) {
-        console.log(clickEvent)
         clickEvent.preventDefault();
+        addNewNoteAndRefreshNoteList(clickEvent)
     });
+  };
+
+  function addNewNoteAndRefreshNoteList(clickEvent) {
+    noteController.noteListView.newNote(clickEvent.srcElement.previousElementSibling.value);
+    noteController.refreshNotes();
+    document.getElementById("textarea").value = ""
   };
 
   exports.NoteController = NoteController;
