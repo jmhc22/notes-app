@@ -15,9 +15,11 @@
 
   function changesDocumentAppIdToHTML() {
     var noteController = new NoteController(new NoteListViewDouble(new NoteListDouble()));
+    var element = document.getElementById("app");
+    assert.isTrue(element.innerHTML != "<ul><li><div>note 1</div></li><li><div>note 2</div></li></ul>", "changesDocumentAppIdToHTML1");
     noteController.refreshNotes();
     var element = document.getElementById("app");
-    assert.isTrue(element.innerHTML === "<ul><li><div>note 1</div></li><li><div>note 2</div></li></ul>", "changesDocumentAppIdToHTML");
+    assert.isTrue(element.innerHTML === "<ul><li><div>note 1</div></li><li><div>note 2</div></li></ul>", "changesDocumentAppIdToHTML2");
   };
 
   changesDocumentAppIdToHTML();
