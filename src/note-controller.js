@@ -18,6 +18,7 @@
   noteController.refreshNotes();
 
   makeUrlChangeShowNoteIdForClickedNoteAndDisplayContent();
+  interceptNewNoteSubmit();
 
   function makeUrlChangeShowNoteIdForClickedNoteAndDisplayContent() {
     window.addEventListener("hashchange", showNoteForCurrentPage);
@@ -26,7 +27,9 @@
   function showNoteForCurrentPage() {
     if (location.hash.includes("#notes/")) {
       showNote(getNoteFromUrl(window.location));
-    }
+    } else if (location.hash === "") {
+      noteController.refreshNotes();
+    };
   };
 
   function getNoteFromUrl(location) {
@@ -44,13 +47,13 @@
     noteView.singleNoteHTML();
   }
 
-  function makeHeaderClickReturnHome() {
+  function interceptNewNoteSubmit() {
     document
-      .getElementById("header")
+      .getElementById("text")
       .addEventListener("click", function(clickEvent) {
+        console.log(clickEvent)
         clickEvent.preventDefault();
-        noteController.refreshNotes();
-      });
+    });
   };
 
   exports.NoteController = NoteController;
