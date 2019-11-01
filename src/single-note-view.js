@@ -5,7 +5,7 @@
 
   SingleNoteView.prototype.singleNoteHTML = function() {
     var element = document.getElementById("app");
-    element.innerHTML = `<div>${this.note.text}</div>`;
+    element.innerHTML = `<div><p class="singlenote">${this.note.text}</p></div>`;
   }
 
   exports.SingleNoteView = SingleNoteView;

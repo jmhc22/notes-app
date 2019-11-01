@@ -1,7 +1,5 @@
 (function(exports) {
   function NoteController(noteListView = new NoteListView(new NoteList)) {
-    noteListView.newNote("Favourite drink: seltzer");
-    noteListView.newNote("Favourite food: pizza");
     this.noteListView = noteListView;
   }
 
@@ -57,7 +55,7 @@
   };
 
   function addNewNoteAndRefreshNoteList(clickEvent) {
-    noteController.noteListView.newNote(clickEvent.srcElement.previousElementSibling.value);
+    noteController.noteListView.newNote(document.getElementById("textarea").value);
     noteController.refreshNotes();
     document.getElementById("textarea").value = ""
   };

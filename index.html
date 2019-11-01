@@ -5,16 +5,23 @@
     <title>Notes App</title>
   </head>
   <body>
-    <h1><a id="header" href="#">NOTES</a></h1>
-    <div id="app">
-      hello
-    </div>
-    <br>
-    <div>
-      <form id="text" action="#notes/new" method="POST">
-        <input id="textarea" type="text" placeholder="Type new note here...">
-        <input id="textsubmit" type="submit" value="Create Note">
-      </form>
+    <div class="row">
+      <h1><center><a id="header" href="#">NOTES NOTES NOTES</a></center></h1>
+      <div class="column">
+        <div id="app">
+          hello
+        </div>
+      </div>
+      <div class="column">
+        <div><center>
+          <form id="text" action="#notes/new" method="POST">
+            <br><br>
+            <textarea id="textarea" placeholder="Type new note here..."></textarea>
+            <br>
+            <input id="textsubmit" type="submit" value="Create Note">
+          </form>
+        </center></div>
+      </div>
     </div>
     <script src="src/note-model.js"></script>
     <script src="src/note-list-model.js"></script>

@@ -27,6 +27,7 @@
     var noteController = new NoteController(new NoteListViewDouble(new NoteListDouble()));
     document.getElementById('test').click();
     var element = document.getElementById("app");
+    console.log(element)
     assert.isTrue(element.innerHTML.includes("#notes/0"), "clickingNoteDisplaysFullNote2");
   };
 
